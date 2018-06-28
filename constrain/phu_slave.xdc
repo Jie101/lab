@@ -1,7 +1,3 @@
-# GWINSTEK, PHU SERIES
-# PHU SLAVE, FPGA IO
-# **** BANK 14
-# === DEBUG PORT
 set_property PACKAGE_PIN E11 [get_ports MONI_0]
 set_property IOSTANDARD LVCMOS33 [get_ports MONI_0]
 
@@ -30,12 +26,22 @@ set_property IOSTANDARD LVCMOS33 [get_ports FPGA_PARA_SPI_CS]
 set_property PACKAGE_PIN G14 [get_ports FPGA_PARA_SPI_DIE]
 set_property IOSTANDARD LVCMOS33 [get_ports FPGA_PARA_SPI_DIE]
 
-# === CHIP CLK/RST
-set_property PACKAGE_PIN C14 [get_ports FPGA_RESET]
-set_property IOSTANDARD LVCMOS33 [get_ports FPGA_RESET]
 
-set_property PACKAGE_PIN F11 [get_ports FPGA_SYSCLK]
-set_property IOSTANDARD LVCMOS33 [get_ports FPGA_SYSCLK]
+
+
+# === CHIP CLK/RST
+set_property PACKAGE_PIN C14 [get_ports FPGA_EXT_RESET]
+set_property IOSTANDARD LVCMOS33 [get_ports FPGA_EXT_RESET]
+
+
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {MMCM_CLK_0/inst/clk_in1_clk_wiz_0}]
+set_property PACKAGE_PIN F11 [get_ports FPGA_EXT_CLK]
+set_property IOSTANDARD LVCMOS33 [get_ports FPGA_EXT_CLK]
+
+
+
+
+
 
 
 # === CONTROL SIGNAL
